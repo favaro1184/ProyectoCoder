@@ -25,6 +25,8 @@
                 <a class="navbar-brand" href="{% url 'VerProfes' %}">Profesores</a>
                 <a class="navbar-brand" href="{% url 'VerEstudiantes' %}">Estudiantes</a>
                 <a class="navbar-brand" href="{% url 'VerEntregas' %}">Entregables</a>
+                <a class="navbar-brand" href="{% url 'CrearCursos' %}">Crear Cursos</a>
+                <a class="navbar-brand" href="{% url 'CrearProfesor' %}">Crear Profes</a>
                 <a class="btn btn-primary" href="#signup">Registrarse</a>
             </div>
         </nav>
@@ -114,7 +116,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{% static 'AppCoder/js/scripts.js' %}"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
