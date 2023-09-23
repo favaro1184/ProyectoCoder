@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Formulario para la busqueda de profesores
+{% endblock %}
+
+{% block formulario %}
+<form action="/AppCoder/resultadoProfesor/" method="GET">
+    <table>
+        <p> Apellido: <input type = "text" name="apellido"> </p>
+        <input type = "submit" value="Buscar">
+    </table>
+ </form> 
+{% endblock %}

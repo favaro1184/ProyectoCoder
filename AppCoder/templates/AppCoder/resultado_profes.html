@@ -3,8 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-Aca veremos los Cursos<p>
-<a class="btn btn-primary" href="{% url 'CrearCursos' %}">Crear Cursos</a>
+    Resultado de la busqueda de Profesores
 {% endblock %}
 
 {% block formulario %}
@@ -13,16 +12,20 @@ Aca veremos los Cursos<p>
         <table>
             <tr>
                 <th>Nombre</th>
-                <th>Comision</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Profesion</th>
             </tr>
             {% for profe in res %}
             <tr>
                 <td>{{ profe.nombre }} </td>
-                <td>{{ profe.comision }} </td>
+                <td>{{ profe.apellido }} </td>
+                <td>{{ profe.email }} </td>
+                <td>{{ profe.profesion }} </td>
             </tr>
             {% endfor%}
         </table>
     {% else %}
-        <h3>No se obtuvieron resultados de cursos </h3>
+        <h3>No se obtuvieron resultados con el apellido enviado </h3>
     {% endif %}
 {% endblock %}

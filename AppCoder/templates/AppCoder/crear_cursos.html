@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORMULARIO CREAR CURSO</title>
-</head>
-<body>
-    <form action="/AppCoder/crearCurso/" method="POST"> {% csrf_token %}
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Bienvenido al registro de Cursos
+{% endblock %}
+
+{% block formulario %}
+<form action="/AppCoder/crearCurso/" method="POST"> {% csrf_token %}
+    <table>
         <p> Nombre: <input type = "text" name="nombre"> </p>
         <p> Comision: <input type = "text" name="comision"> </p>
         <input type = "submit" value="Guardar">
-     </form> 
-</body>
-</html>
+    </table>
+ </form> 
+{% endblock %}

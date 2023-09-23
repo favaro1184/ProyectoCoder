@@ -1,7 +1,34 @@
-{% extends "AppCoder/padre.html" %}
+{% extends "AppCoder/padre2.html" %}
 
 {% load static %}
 
 {% block titulo %}
-Aca veremos los profesores
+Aca veremos los profesores<p>
+<a class="btn btn-primary" href="{% url 'CrearProfesor' %}">Crear Profes</a>
+<a class="btn btn-primary" href="{% url 'BuscarProfesor' %}">Buscar Profes</a>
+{% endblock %}
+
+{% block formulario %}
+    {% if res %}
+        <h3>Los resultados son: </h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Profesion</th>
+            </tr>
+            {% for profe in res %}
+            <tr>
+                <td>{{ profe.nombre }} </td>
+                <td>{{ profe.apellido }} </td>
+                <td>{{ profe.email }} </td>
+                <td>{{ profe.profesion }} </td>
+                <td><a class="btn btn-primary" href="{% url 'EliminarProfesor' profe.nombre %}">Eliminar Profesor</a> </td>
+            </tr>
+            {% endfor%}
+        </table>
+    {% else %}
+        <h3>No se obtuvieron resultados de profesores </h3>
+    {% endif %}
 {% endblock %}
