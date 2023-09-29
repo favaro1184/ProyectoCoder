@@ -6,6 +6,7 @@
 Aca veremos los profesores<p>
 <a class="btn btn-primary" href="{% url 'CrearProfesor' %}">Crear Profes</a>
 <a class="btn btn-primary" href="{% url 'BuscarProfesor' %}">Buscar Profes</a>
+
 {% endblock %}
 
 {% block formulario %}
@@ -24,7 +25,8 @@ Aca veremos los profesores<p>
                 <td>{{ profe.apellido }} </td>
                 <td>{{ profe.email }} </td>
                 <td>{{ profe.profesion }} </td>
-                <td><a class="btn btn-primary" href="{% url 'EliminarProfesor' profe.nombre %}">Eliminar Profesor</a> </td>
+                <td><a class="btn btn-primary" href="{% url 'EliminarProfesor' profe.id %}">Eliminar Profesor</a> </td>
+                <td><a class="btn btn-primary" href="{% url 'ActualizarProfesor' profe.id %}">Actualizar Profesor</a> </td>
             </tr>
             {% endfor%}
         </table>

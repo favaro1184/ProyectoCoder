@@ -1,0 +1,16 @@
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Bienvenido al login de usuarios
+{% endblock %}
+
+{% block formulario %}
+<form action="" method="POST"> {% csrf_token %}
+    <table>
+        {{ res.as_table}}
+    </table>
+    <input type = "submit" value="Iniciar Sesion">
+ </form> 
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Aca veremos el detalle de los estudiantes<p>
+
+{% endblock %}
+
+{% block formulario %}
+    {% if object %}
+        <h3>Los resultados son: </h3>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>{{ object.id }} </td>
+                <td>{{ object.nombre }} </td>
+                <td>{{ object.apellido }} </td>
+                <td>{{ object.email }} </td>
+            </tr>
+        </table>
+    {% else %}
+        <h3>No se obtuvieron detalles de estudiantes </h3>
+    {% endif %}
+{% endblock %}

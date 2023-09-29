@@ -1,0 +1,34 @@
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Aca veremos los estudiante<p>
+<a class="btn btn-primary" href="{% url 'CrearEstudiantes' %}">Crear Estudiantes</a>
+
+{% endblock %}
+
+{% block formulario %}
+    {% if object_list %}
+        <h3>Los resultados son: </h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            {% for e in object_list %}
+            <tr>
+                <td>{{ e.nombre }} </td>
+                <td>{{ e.apellido }} </td>
+                <td>{{ e.email }} </td>
+                <td><a class="btn btn-primary" href="{% url 'BorrarEstudiantes' e.id %}">Eliminar Estudiante</a> </td>
+                <td><a class="btn btn-primary" href="{% url 'ActualizarEstudiantes' e.id %}">Actualizar Estudiante</a> </td>
+                <td><a class="btn btn-primary" href="{% url 'DetalleEstudiantes' e.id %}">Detalle Estudiante</a> </td>
+            </tr>
+            {% endfor%}
+        </table>
+    {% else %}
+        <h3>No se obtuvieron resultados de estudiantes </h3>
+    {% endif %}
+{% endblock %}

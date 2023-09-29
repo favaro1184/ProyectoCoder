@@ -1,0 +1,15 @@
+{% extends "AppCoder/padre2.html" %}
+
+{% load static %}
+
+{% block titulo %}
+Bienvenido al borrado de estudiantes
+{% endblock %}
+
+{% block formulario %}
+<form action="" method="POST"> {% csrf_token %}
+    <p> Estas seguro de borrarlo al estudiante {{object.nombre}}
+
+    <input type = "submit" value="Guardar">
+ </form> 
+{% endblock %}
